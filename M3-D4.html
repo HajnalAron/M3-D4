@@ -122,6 +122,7 @@
         let cart = document.querySelector(".list-group");
         if (itemsInCart === 0) {
           cart.innerHTML += `<button
+                                id ="clearCartBtn"
                                 onclick="clearCart()"
                                 type="button"
                                 class="btn btn-sm btn-outline-secondary"
@@ -155,7 +156,11 @@
         itemsInCart += 1;
       }
       function remove(event) {
-        console.log(event.target.parentNode.remove());
+        event.target.parentNode.remove();
+        itemsInCart -= 1;
+        if (itemsInCart === 0) {
+          document.querySelector("#clearCartBtn").remove();
+        }
       }
       let itemsInCart = 0;
     </script>
