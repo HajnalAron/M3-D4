@@ -161,6 +161,8 @@
         if (itemsInCart === 0) {
           document.querySelector("#clearCartBtn").remove();
         }
+        let current = document.querySelector(".currentTotal");
+        let price = event.target.parentNode.querySelector("small").innerHTML;
       }
       let itemsInCart = 0;
     </script>
